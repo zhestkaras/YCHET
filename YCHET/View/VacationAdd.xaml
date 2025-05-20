@@ -1,0 +1,27 @@
+﻿<Window x:Class="YCHET.View.VacationAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YCHET.View"
+        mc:Ignorable="d"
+        Title="VacationAdd" Height="300" Width="400">
+    <Grid>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1"  >
+            <StackPanel DataContext="{Binding NewVacation}">
+                <TextBlock Text=" Добавление новой записи" Height="49" Background="#E58D2525" Foreground="White"/>
+                <TextBlock Text="Начало отпуска"/>
+                <DatePicker Text="{Binding Start_vacation, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Сколько дней"/>
+                <TextBox Text="{Binding How_vacation, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Больничный отпуск"/>
+                <TextBox Text="{Binding Sick_vacation, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Конец отпуска"/>
+                <DatePicker Text="{Binding Vacation_end_date, UpdateSourceTrigger=PropertyChanged}"/>
+
+            </StackPanel>
+            <Button Content="Сохранить изменения" Command="{Binding InsertVacation}" Background="#E58D2525" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Window>
